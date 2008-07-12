@@ -12,6 +12,7 @@ BuildRequires:	taglib-devel
 BuildRequires:	jackit-devel
 BuildRequires:	libsamplerate-devel
 BuildRequires:	libmpcdec-devel
+BuildRequires:	ffmpeg-devel
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 Patch0:		qmmp-0.1.6-new-ffmpeg-header-location.patch
 Group:		Sound
