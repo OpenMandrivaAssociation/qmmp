@@ -2,7 +2,7 @@ Name:		qmmp
 Version:	0.1.6
 Release:	%mkrel 1
 License:	GPLv2+
-URL:		http://qmmp.ylsoftware.com
+URL:		http://qmmp.ylsoftware.com/index_en.php
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	qt4-devel
 BuildRequires:	mad-devel
