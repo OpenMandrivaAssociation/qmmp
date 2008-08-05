@@ -19,6 +19,7 @@ BuildRequires:	libsndfile-devel
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	ffmpeg-devel
+BuildRequires:	cmake
 
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 Group:		Sound
@@ -149,12 +150,15 @@ This contains basic plugin distribution.
 %setup -q
 
 %build
-%qmake_qt4
+%setup_compile_flags
+cmake . \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DLIBDIR=%{_lib}
 make
 
 %install
 rm -rf %buildroot
-%makeinstall_std INSTALLROOT=%buildroot
+%makeinstall_std
 
 %clean
 rm -rf %{buildroot}
