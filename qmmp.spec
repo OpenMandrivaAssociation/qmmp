@@ -153,7 +153,7 @@ This contains basic plugin distribution.
 %setup_compile_flags
 cmake . \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DLIBDIR=%{_lib}
+	-DLIB_DIR=%{_lib}
 make
 
 %install
