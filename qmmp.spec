@@ -1,6 +1,6 @@
 Name:		qmmp
 Version:	0.2.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 URL:		http://qmmp.ylsoftware.com/index_en.php
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -64,14 +64,17 @@ Main opportunities:
 %package -n	%{libname}
 Group:		System/Libraries
 Summary:	Library for %{name}
+Conflicts:	%name < 0.2.0
+
 %description -n	%{libname}
 Qmmp is an audio-player, written with help of Qt library.
 This package contains the library needed by %{name}
 
-
 %package -n	%{libnameui}
 Group:		System/Libraries
 Summary:	Library for %{name}
+Conflicts:      %name < 0.2.0
+
 %description -n	%{libnameui}
 Qmmp is an audio-player, written with help of Qt library.
 This package contains the library needed by %{name}
@@ -105,36 +108,48 @@ which use %{name}
 %package -n %name-jack
 Summary: Qmmp Jack Output Plugin
 Group: Sound
+Conflicts:      %name < 0.2.0
+
 %description -n %name-jack
 This is the Jack Output Plugin for Qmmp
 
 %package -n %name-oss
 Summary: Qmmp OSS Output Plugin
 Group: Sound
+Conflicts:      %name < 0.2.0
+
 %description -n %name-oss
 This is the Jack OSS Plugin for Qmmp
 
 %package -n %name-musepack
 Summary: Qmmp MusePack Output Plugin
 Group: Sound
+Conflicts:      %name < 0.2.0
+
 %description -n %name-musepack
 This is the Musepack Input Plugin for Qmmp
 
 %package -n %name-ffmpeg
 Summary: Qmmp FFMPEG Input Plugin
 Group: Sound
+Conflicts:      %name < 0.2.0
+
 %description -n %name-ffmpeg
 This is the FFMPEG Input Plugin for Qmmp
 
 %package -n %name-wavpack
 Summary: Qmmp WavPack Input Plugin
 Group: Sound
+Conflicts:      %name < 0.2.0
+
 %description -n %name-wavpack
 This is the WavPack Input Plugin for Qmmp
 
 %package -n %name-modplug
 Summary: Qmmp Modplug Input Plugin
 Group: Sound
+Conflicts:      %name < 0.2.0
+
 %description -n %name-modplug
 This is the Modplug Input Plugin for Qmmp
 
@@ -142,6 +157,8 @@ This is the Modplug Input Plugin for Qmmp
 Summary: Qmmp Plugins
 Group: Sound
 Provides: %name-plugins
+Conflicts:      %name < 0.2.0
+
 %description -n %name-plugins
 Qmmp is an audio-player, written with help of Qt library.
 This contains basic plugin distribution.
