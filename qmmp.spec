@@ -23,6 +23,8 @@ BuildRequires:	cmake
 
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 Patch0:		qmmp-0.2.2-out-of-source-build.patch
+Patch1:		qmmp-0.2.2-parallel-build.patch
+Patch2:		qmmp-0.2.2-lib64-fix.patch
 Group:		Sound
 Summary:	Qt-based Multimedia Player
 
@@ -167,10 +169,12 @@ This contains basic plugin distribution.
 %prep
 %setup -q
 %patch0 -p0 -b .out
+%patch1 -p0 -b .parallel
+%patch2 -p0 -b .lib64
 
 %build
 %cmake_qt4
-make
+%make
 
 %install
 rm -rf %buildroot
