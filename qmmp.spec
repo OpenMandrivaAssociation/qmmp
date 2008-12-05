@@ -1,10 +1,11 @@
 Name:		qmmp
-Version:	0.2.2
-Release:	%mkrel 3
+Version:	0.2.3
+Release:	%mkrel 1
 License:	GPLv2+
 URL:		http://qmmp.ylsoftware.com/index_en.php
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	qt4-devel >= 4.3 qt4-linguist
+BuildRequires:	qt4-devel >= 4.3
+BuildRequires:	qt4-linguist
 BuildRequires:	mad-devel
 BuildRequires:	oggvorbis-devel
 BuildRequires:	libalsa-devel
@@ -22,9 +23,6 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	cmake
 
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
-Patch0:		qmmp-0.2.2-out-of-source-build.patch
-Patch1:		qmmp-0.2.2-parallel-build.patch
-Patch2:		qmmp-0.2.2-lib64-fix.patch
 Group:		Sound
 Summary:	Qt-based Multimedia Player
 
@@ -168,9 +166,6 @@ This contains basic plugin distribution.
 
 %prep
 %setup -q
-%patch0 -p0 -b .out
-%patch1 -p0 -b .parallel
-%patch2 -p0 -b .lib64
 
 %build
 %cmake_qt4
