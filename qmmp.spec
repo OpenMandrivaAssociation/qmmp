@@ -1,5 +1,5 @@
 Name:		qmmp
-Version:	0.2.3
+Version:	0.2.4
 Release:	%mkrel 1
 License:	GPLv2+
 URL:		http://qmmp.ylsoftware.com/index_en.php
@@ -23,6 +23,7 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	cmake
 
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+Patch0:		qmmp-0.2.4-fix-str-fmt.patch
 Group:		Sound
 Summary:	Qt-based Multimedia Player
 
@@ -166,6 +167,7 @@ This contains basic plugin distribution.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake_qt4
