@@ -1,5 +1,5 @@
 Name:		qmmp
-Version:	0.2.4
+Version:	0.3.0
 Release:	%mkrel 1
 License:	GPLv2+
 URL:		http://qmmp.ylsoftware.com/index_en.php
@@ -19,12 +19,12 @@ BuildRequires:	libmodplug-devel
 BuildRequires:	libsndfile-devel
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
+BuildRequires:	libprojectm-devel
+BuildRequires:	libcdio-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	cmake
 
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
-Patch0:		qmmp-0.2.4-fix-str-fmt.patch
-Patch1:		qmmp-0.2.4-ulong.patch
 Group:		Sound
 Summary:	Qt-based Multimedia Player
 
@@ -168,8 +168,6 @@ This contains basic plugin distribution.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p0
 
 %build
 %cmake_qt4
@@ -196,7 +194,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog
 %{_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/16x16/apps/qmmp.png
 %{_datadir}/icons/hicolor/32x32/apps/qmmp.png
 %{_datadir}/icons/hicolor/48x48/apps/qmmp.png
@@ -242,14 +240,21 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libmad.so
 %{_libdir}/%name/Input/libsndfile.so
 %{_libdir}/%name/Input/libvorbis.so
+%{_libdir}/%name/Input/libcdaudio.so
+%{_libdir}/%name/Input/libcue.so
+%{_libdir}/%name/Input/libmplayer.so
 
 %{_libdir}/%name/Output/libalsa.so
 %{_libdir}/%name/Output/libpulseaudio.so
 
-%{_libdir}/%name/General/libdbuscontrol.so
 %{_libdir}/%name/General/libnotifier.so
 %{_libdir}/%name/General/libscrobbler.so
 %{_libdir}/%name/General/libstatusicon.so
+%{_libdir}/%name/General/libfileops.so
+%{_libdir}/%name/General/libhal.so
+%{_libdir}/%name/General/libhotkey.so
+%{_libdir}/%name/General/liblyrics.so
+%{_libdir}/%name/General/libmpris.so
 
 %{_libdir}/%name/CommandLineOptions/libincdecvolumeoption.so
 %{_libdir}/%name/Effect/libsrconverter.so
@@ -258,3 +263,4 @@ rm -rf %{buildroot}
 %{_libdir}/%name/PlaylistFormats/libplsplaylistformat.so
 %{_libdir}/%name/PlaylistFormats/libxspfplaylistformat.so
 %{_libdir}/%name/Visual/libanalyzer.so
+%{_libdir}/%name/Visual/libprojectm.so
