@@ -1,5 +1,5 @@
 Name:		qmmp
-Version:	0.3.1
+Version:	0.3.2
 Release:	%mkrel 1
 License:	GPLv2+
 URL:		http://qmmp.ylsoftware.com/index_en.php
