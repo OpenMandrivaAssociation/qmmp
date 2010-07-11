@@ -22,6 +22,10 @@ BuildRequires:	pulseaudio-devel
 BuildRequires:	libprojectm-devel
 BuildRequires:	libcdio-devel
 BuildRequires:	ffmpeg-devel
+BuildRequires:	libcddb-devel
+BuildRequires:	libmms-devel
+BuildRequires:	libbs2b-devel
+BuildRequires:	enca-devel
 BuildRequires:	cmake
 
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
@@ -195,9 +199,8 @@ rm -rf %{buildroot}
 %doc AUTHORS ChangeLog
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
-%{_datadir}/icons/hicolor/16x16/apps/qmmp.png
-%{_datadir}/icons/hicolor/32x32/apps/qmmp.png
-%{_datadir}/icons/hicolor/48x48/apps/qmmp.png
+%{_iconsdir}/hicolor/*/apps/*
+%{_datadir}/%name
 
 %files -n %{libname}
 %defattr(-,root,root,-)
@@ -242,10 +245,10 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libvorbis.so
 %{_libdir}/%name/Input/libcdaudio.so
 %{_libdir}/%name/Input/libcue.so
-%{_libdir}/%name/Input/libmplayer.so
 
 %{_libdir}/%name/Output/libalsa.so
 %{_libdir}/%name/Output/libpulseaudio.so
+%{_libdir}/%name/Output/libnull.so
 
 %{_libdir}/%name/General/libnotifier.so
 %{_libdir}/%name/General/libscrobbler.so
@@ -255,12 +258,21 @@ rm -rf %{buildroot}
 %{_libdir}/%name/General/libhotkey.so
 %{_libdir}/%name/General/liblyrics.so
 %{_libdir}/%name/General/libmpris.so
+%{_libdir}/%name/General/libcovermanager.so
+%{_libdir}/%name/General/libkdenotify.so
+
+%{_libdir}/%name/Engines/libmplayer.so
 
 %{_libdir}/%name/CommandLineOptions/libincdecvolumeoption.so
+%{_libdir}/%name/CommandLineOptions/libseekoption.so
 %{_libdir}/%name/Effect/libsrconverter.so
+%{_libdir}/%name/Effect/libbs2b.so
+%{_libdir}/%name/Effect/libladspa.so
 %{_libdir}/%name/FileDialogs/libqmmpfiledialog.so
 %{_libdir}/%name/PlaylistFormats/libm3uplaylistformat.so
 %{_libdir}/%name/PlaylistFormats/libplsplaylistformat.so
 %{_libdir}/%name/PlaylistFormats/libxspfplaylistformat.so
+%{_libdir}/%name/Transports/libhttp.so
+%{_libdir}/%name/Transports/libmms.so
 %{_libdir}/%name/Visual/libanalyzer.so
 %{_libdir}/%name/Visual/libprojectm.so
