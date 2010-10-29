@@ -1,8 +1,17 @@
+%define major			0
+%define libname 		%mklibname %{name}	%{major}
+%define libname_devel		%mklibname %{name} 	-d
+%define libnameui 		%mklibname qmmpui 	%{major}
+%define libnameui_devel		%mklibname qmmpui 	-d
+
+Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.4.1
+Version:	0.4.2
 Release:	%mkrel 1
-License:	GPLv2+
 URL:		http://qmmp.ylsoftware.com/index_en.php
+Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+License:	GPLv2+
+Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	qt4-devel >= 4.3
 BuildRequires:	qt4-linguist
@@ -27,16 +36,6 @@ BuildRequires:	libmms-devel
 BuildRequires:	libbs2b-devel
 BuildRequires:	enca-devel
 BuildRequires:	cmake
-
-Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
-Group:		Sound
-Summary:	Qt-based Multimedia Player
-
-%define major			0
-%define libname 		%mklibname %{name}	%{major}
-%define libname_devel		%mklibname %{name} 	-d
-%define libnameui 		%mklibname qmmpui 	%{major}
-%define libnameui_devel		%mklibname qmmpui 	-d
 Requires:	unzip
 Requires:	%{libname} = %{version}
 Requires:	%{libnameui} = %{version}
@@ -183,16 +182,6 @@ rm -rf %buildroot
 
 %clean
 rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
 
 %files
 %defattr(-,root,root)
