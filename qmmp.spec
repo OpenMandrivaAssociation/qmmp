@@ -29,6 +29,8 @@ BuildRequires:	libsndfile-devel
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	udisks-devel
+BuildRequires:	wildmidi-devel
+BuildRequires:	libgme-devel
 BuildRequires:	libprojectm-devel
 BuildRequires:	libcdio-devel
 BuildRequires:	ffmpeg-devel
@@ -235,6 +237,8 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libvorbis.so
 %{_libdir}/%name/Input/libcdaudio.so
 %{_libdir}/%name/Input/libcue.so
+%{_libdir}/%name/Input/libgme.so
+%{_libdir}/%name/Input/libwildmidi.so
 
 %{_libdir}/%name/Output/libalsa.so
 %{_libdir}/%name/Output/libpulseaudio.so
@@ -249,14 +253,18 @@ rm -rf %{buildroot}
 %{_libdir}/%name/General/libmpris.so
 %{_libdir}/%name/General/libcovermanager.so
 %{_libdir}/%name/General/libkdenotify.so
+%{_libdir}/%name/General/libudisks.so
 
 %{_libdir}/%name/Engines/libmplayer.so
 
 %{_libdir}/%name/CommandLineOptions/libincdecvolumeoption.so
 %{_libdir}/%name/CommandLineOptions/libseekoption.so
+%{_libdir}/%name/CommandLineOptions/libstatusoption.so
 %{_libdir}/%name/Effect/libsrconverter.so
 %{_libdir}/%name/Effect/libbs2b.so
 %{_libdir}/%name/Effect/libladspa.so
+%{_libdir}/%name/Effect/libcrossfade.so
+%{_libdir}/%name/Effect/libstereo.so
 %{_libdir}/%name/FileDialogs/libqmmpfiledialog.so
 %{_libdir}/%name/PlaylistFormats/libm3uplaylistformat.so
 %{_libdir}/%name/PlaylistFormats/libplsplaylistformat.so
