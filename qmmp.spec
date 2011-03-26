@@ -6,7 +6,7 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.4.5
+Version:	0.5.0
 Release:	%mkrel 1
 URL:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
@@ -28,6 +28,7 @@ BuildRequires:	libmodplug-devel
 BuildRequires:	libsndfile-devel
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
+BuildRequires:	udisks-devel
 BuildRequires:	libprojectm-devel
 BuildRequires:	libcdio-devel
 BuildRequires:	ffmpeg-devel
@@ -173,7 +174,7 @@ This contains basic plugin distribution.
 %setup -q
 
 %build
-%cmake_qt4
+%cmake_qt4 -DUSE_HAL=OFF
 %make
 
 %install
@@ -243,7 +244,6 @@ rm -rf %{buildroot}
 %{_libdir}/%name/General/libscrobbler.so
 %{_libdir}/%name/General/libstatusicon.so
 %{_libdir}/%name/General/libfileops.so
-%{_libdir}/%name/General/libhal.so
 %{_libdir}/%name/General/libhotkey.so
 %{_libdir}/%name/General/liblyrics.so
 %{_libdir}/%name/General/libmpris.so
