@@ -29,7 +29,7 @@ BuildRequires:	libsndfile-devel
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	udisks-devel
-BuildRequires:	wildmidi-devel
+BuildRequires:	wildmidi-devel >= 0.2.3.4
 BuildRequires:	libgme-devel
 BuildRequires:	libprojectm-devel
 BuildRequires:	libcdio-devel
@@ -237,8 +237,12 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libvorbis.so
 %{_libdir}/%name/Input/libcdaudio.so
 %{_libdir}/%name/Input/libcue.so
+#<<<<<<< .mine
+%{_libdir}/%name/Input/libaac.so
+#=======
 %{_libdir}/%name/Input/libgme.so
 %{_libdir}/%name/Input/libwildmidi.so
+#>>>>>>> .r648732
 
 %{_libdir}/%name/Output/libalsa.so
 %{_libdir}/%name/Output/libpulseaudio.so
