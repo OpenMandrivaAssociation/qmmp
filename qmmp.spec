@@ -43,7 +43,7 @@ Requires:	unzip
 Requires:	%{libname} = %{version}
 Requires:	%{libnameui} = %{version}
 Requires:	%name-plugins = %{version}
-
+Requires:	wildmindi
 
 %description
 This program is an audio-player, written with help of Qt library. The user
