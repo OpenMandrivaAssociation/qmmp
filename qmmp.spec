@@ -237,12 +237,8 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libvorbis.so
 %{_libdir}/%name/Input/libcdaudio.so
 %{_libdir}/%name/Input/libcue.so
-#<<<<<<< .mine
-%{_libdir}/%name/Input/libaac.so
-#=======
 %{_libdir}/%name/Input/libgme.so
 %{_libdir}/%name/Input/libwildmidi.so
-#>>>>>>> .r648732
 
 %{_libdir}/%name/Output/libalsa.so
 %{_libdir}/%name/Output/libpulseaudio.so
