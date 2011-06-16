@@ -43,7 +43,7 @@ Requires:	unzip
 Requires:	%{libname} = %{version}
 Requires:	%{libnameui} = %{version}
 Requires:	%name-plugins = %{version}
-Requires:	wildmidi
+Requires:	wildmidi >= 0.2.3.4
 
 %description
 This program is an audio-player, written with help of Qt library. The user
@@ -172,6 +172,14 @@ Conflicts:      %name < 0.2.0
 Qmmp is an audio-player, written with help of Qt library.
 This contains basic plugin distribution.
 
+%package -n %name-aac
+Summary:	Qmmp AAC Input Plugin
+Group:		Sound
+Conflicts:	%name < 0.2.0
+
+%description -n %name-aac
+Qmmp AAC codec Input plugin
+
 %prep
 %setup -q
 
@@ -223,6 +231,9 @@ rm -rf %{buildroot}
 
 %files -n %name-ffmpeg
 %{_libdir}/%name/Input/libffmpeg.so
+
+%files -n %name-aac
+%{_libdir}/%name/Input/libaac.so
 
 %files -n %name-wavpack
 %{_libdir}/%name/Input/libwavpack.so
