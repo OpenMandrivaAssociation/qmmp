@@ -6,8 +6,8 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.5.2
-Release:	%mkrel 2
+Version:	0.5.4
+Release:	%mkrel 1
 URL:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 License:	GPLv2+
@@ -29,7 +29,9 @@ BuildRequires:	libsndfile-devel
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	udisks-devel
+%if %mdkversion >= 201100 
 BuildRequires:	wildmidi-devel >= 0.2.3.4
+%endif
 BuildRequires:	libgme-devel
 BuildRequires:	libprojectm-devel
 BuildRequires:	libcdio-devel
@@ -43,7 +45,9 @@ Requires:	unzip
 Requires:	%{libname} = %{version}
 Requires:	%{libnameui} = %{version}
 Requires:	%name-plugins = %{version}
+%if %mdkversion >= 201100
 Requires:	wildmidi >= 0.2.3.4
+%endif
 
 %description
 This program is an audio-player, written with help of Qt library. The user
@@ -172,6 +176,7 @@ Conflicts:      %name < 0.2.0
 Qmmp is an audio-player, written with help of Qt library.
 This contains basic plugin distribution.
 
+%if %mdkversion >= 201100
 %package -n %name-aac
 Summary:	Qmmp AAC Input Plugin
 Group:		Sound
@@ -179,12 +184,17 @@ Conflicts:	%name < 0.2.0
 
 %description -n %name-aac
 Qmmp AAC codec Input plugin
+%endif
 
 %prep
 %setup -q
 
 %build
+%if %mdkversion >= 201100
 %cmake_qt4 -DUSE_HAL=OFF
+%else
+%cmake_qt4 -DUSE_HAL=OFF -DUSE_MIDI=OFF
+%endif
 %make
 
 %install
@@ -232,8 +242,10 @@ rm -rf %{buildroot}
 %files -n %name-ffmpeg
 %{_libdir}/%name/Input/libffmpeg.so
 
+%if %mdkversion >= 201100
 %files -n %name-aac
 %{_libdir}/%name/Input/libaac.so
+%endif
 
 %files -n %name-wavpack
 %{_libdir}/%name/Input/libwavpack.so
@@ -249,8 +261,9 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libcdaudio.so
 %{_libdir}/%name/Input/libcue.so
 %{_libdir}/%name/Input/libgme.so
+%if %mdkversion >= 201100
 %{_libdir}/%name/Input/libwildmidi.so
-
+%endif 
 %{_libdir}/%name/Output/libalsa.so
 %{_libdir}/%name/Output/libpulseaudio.so
 %{_libdir}/%name/Output/libnull.so
