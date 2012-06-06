@@ -6,7 +6,7 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.5.4
+Version:	0.5.5
 Release:	%mkrel 1
 URL:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
@@ -39,6 +39,7 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	libcddb-devel
 BuildRequires:	libmms-devel
 BuildRequires:	libbs2b-devel
+BuildRequires:	faad2-devel
 BuildRequires:	enca-devel
 BuildRequires:	cmake
 Requires:	unzip
@@ -176,7 +177,7 @@ Conflicts:      %name < 0.2.0
 Qmmp is an audio-player, written with help of Qt library.
 This contains basic plugin distribution.
 
-%if %mdkversion >= 201100
+#%if %mdkversion >= 201100
 %package -n %name-aac
 Summary:	Qmmp AAC Input Plugin
 Group:		Sound
@@ -184,7 +185,7 @@ Conflicts:	%name < 0.2.0
 
 %description -n %name-aac
 Qmmp AAC codec Input plugin
-%endif
+#%endif
 
 %prep
 %setup -q
@@ -242,10 +243,10 @@ rm -rf %{buildroot}
 %files -n %name-ffmpeg
 %{_libdir}/%name/Input/libffmpeg.so
 
-%if %mdkversion >= 201100
+#%if %mdkversion >= 201100
 %files -n %name-aac
 %{_libdir}/%name/Input/libaac.so
-%endif
+#%endif
 
 %files -n %name-wavpack
 %{_libdir}/%name/Input/libwavpack.so
