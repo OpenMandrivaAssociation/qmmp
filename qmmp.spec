@@ -39,7 +39,7 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	libcddb-devel
 BuildRequires:	libmms-devel
 BuildRequires:	libbs2b-devel
-BuildRequires:	faad2-devel
+#BuildRequires:	faad2-devel
 BuildRequires:	enca-devel
 BuildRequires:	cmake
 Requires:	unzip
@@ -178,13 +178,13 @@ Qmmp is an audio-player, written with help of Qt library.
 This contains basic plugin distribution.
 
 #%if %mdkversion >= 201100
-%package -n %name-aac
-Summary:	Qmmp AAC Input Plugin
-Group:		Sound
-Conflicts:	%name < 0.2.0
+#package -n %name-aac
+#Summary:	Qmmp AAC Input Plugin
+#Group:		Sound
+#Conflicts:	%name < 0.2.0
 
-%description -n %name-aac
-Qmmp AAC codec Input plugin
+#description -n %name-aac
+#Qmmp AAC codec Input plugin
 #%endif
 
 %prep
@@ -192,9 +192,9 @@ Qmmp AAC codec Input plugin
 
 %build
 %if %mdkversion >= 201100
-%cmake_qt4 -DUSE_HAL=OFF
+%cmake_qt4 -DUSE_HAL=OFF -DUSE_AAC:BOOL=FALSE
 %else
-%cmake_qt4 -DUSE_HAL=OFF -DUSE_MIDI=OFF
+%cmake_qt4 -DUSE_HAL=OFF -DUSE_MIDI=OFF -DUSE_AAC:BOOL=FALSE
 %endif
 %make
 
@@ -244,8 +244,8 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Input/libffmpeg.so
 
 #%if %mdkversion >= 201100
-%files -n %name-aac
-%{_libdir}/%name/Input/libaac.so
+#files -n %name-aac
+#{_libdir}/%name/Input/libaac.so
 #%endif
 
 %files -n %name-wavpack
