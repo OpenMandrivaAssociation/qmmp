@@ -6,10 +6,11 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.5.5
+Version:	0.6.0
 Release:	%mkrel 1
 URL:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+Source1:	http://qmmp.ylsoftware.com/files/%{name}-plugin-pack-%{version}.tar.bz2
 License:	GPLv2+
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -127,13 +128,13 @@ Conflicts:      %name < 0.2.0
 %description -n %name-jack
 This is the Jack Output Plugin for Qmmp
 
-%package -n %name-oss
-Summary: Qmmp OSS Output Plugin
-Group: Sound
-Conflicts:      %name < 0.2.0
+#%package -n %name-oss
+#Summary: Qmmp OSS Output Plugin
+#Group: Sound
+#Conflicts:      %name < 0.2.0
 
-%description -n %name-oss
-This is the Jack OSS Plugin for Qmmp
+#%description -n %name-oss
+#This is the Jack OSS Plugin for Qmmp
 
 %package -n %name-musepack
 Summary: Qmmp MusePack Output Plugin
@@ -189,6 +190,7 @@ This contains basic plugin distribution.
 
 %prep
 %setup -q
+%setup1 -q
 
 %build
 %if %mdkversion >= 201100
@@ -234,8 +236,8 @@ rm -rf %{buildroot}
 %files -n %name-jack
 %{_libdir}/%name/Output/libjack.so
 
-%files -n %name-oss
-%{_libdir}/%name/Output/liboss.so
+#%files -n %name-oss
+#%{_libdir}/%name/Output/liboss.so
 
 %files -n %name-musepack
 %{_libdir}/%name/Input/libmpc.so
@@ -298,3 +300,10 @@ rm -rf %{buildroot}
 %{_libdir}/%name/Transports/libmms.so
 %{_libdir}/%name/Visual/libanalyzer.so
 %{_libdir}/%name/Visual/libprojectm.so
+### other
+%{_libdir}/pkgconfig/qmmp.pc
+%{_libdir}/pkgconfig/qmmpui.pc
+%{_libdir}/%name/CommandLineOptions/libplaylistoption.so
+%{_libdir}/%name/General/libconverter.so
+%{_libdir}/%name/General/libstreambrowser.so
+%{_libdir}/%name/Ui/libskinned.so
