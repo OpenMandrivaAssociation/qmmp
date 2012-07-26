@@ -6,14 +6,13 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.6.0
-Release:	%mkrel 1
+Version:	0.6.1
+Release:	1
 URL:		http://qmmp.ylsoftware.com/index_en.php
-Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+Source0:	http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 Source1:	http://qmmp.ylsoftware.com/files/%{name}-plugin-pack-%{version}.tar.bz2
 License:	GPLv2+
 Group:		Sound
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	qt4-devel >= 4.3
 BuildRequires:	qt4-linguist
 BuildRequires:	mad-devel
@@ -26,7 +25,7 @@ BuildRequires:	libmpcdec-devel
 BuildRequires:	jackit-devel
 BuildRequires:	libsamplerate-devel
 BuildRequires:	libmodplug-devel
-BuildRequires:	libsndfile-devel
+BuildRequires:	pkgconfig(sndfile)
 BuildRequires:	libwavpack-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	udisks-devel
