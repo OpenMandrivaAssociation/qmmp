@@ -16,12 +16,12 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	0.7.2
+Version:	0.7.3
 Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
-Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+Source0:	http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 
 BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
