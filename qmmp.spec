@@ -24,7 +24,7 @@ Url:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 
 BuildRequires:	cmake
-BuildRequires:	ffmpeg-devel
+BuildRequires:	ffmpeg-devel >= 2.5.4
 BuildRequires:	libgme-devel
 BuildRequires:	libmpcdec-devel
 BuildRequires:	qt4-devel
