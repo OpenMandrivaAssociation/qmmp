@@ -16,13 +16,14 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	1.2.0
+Version:	1.2.2
 Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
-Patch1:		qmmp-1.2.0-ffmpeg3.5.patch
+# Disable patch, should be fixed in upstream.
+#Patch1:		qmmp-1.2.0-ffmpeg3.5.patch
 
 BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
@@ -400,7 +401,7 @@ This contains basic plug-in distribution.
 
 %prep
 %setup -q
-%apply_patches
+#apply_patches
 
 %build
 #oss3 support is deprecated upstream for now I'll enable it ...
