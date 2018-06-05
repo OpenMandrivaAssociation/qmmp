@@ -22,6 +22,7 @@ License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+# Disable patch, should be fixed in upstream.
 #Patch1:		qmmp-1.2.0-ffmpeg3.5.patch
 
 BuildRequires:	cmake
