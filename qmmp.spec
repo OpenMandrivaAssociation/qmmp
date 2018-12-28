@@ -16,7 +16,7 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	1.2.3
+Version:	1.2.5
 Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
