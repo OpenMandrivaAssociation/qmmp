@@ -57,8 +57,8 @@ BuildRequires:	pkgconfig(udisks2)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(wavpack)
 BuildRequires:	sidplay-devel
+#libsidplay2 was pulled out from cooker. So build only with sidplay-devel(1).(penguin)
 #BuildRequires:	pkgconfig(libsidplay)
-BuildRequires:	sidplay-devel
 # do not remove sdl-headers needed by sid-ogg.Sflo
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(libsidplayfp)
