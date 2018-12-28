@@ -17,7 +17,7 @@
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
 Version:	1.2.5
-Release:	1%{?extrarelsuffix}
+Release:	2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
@@ -57,7 +57,8 @@ BuildRequires:	pkgconfig(udisks2)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(wavpack)
 BuildRequires:	sidplay-devel
-BuildRequires:	pkgconfig(libsidplay2)
+#BuildRequires:	pkgconfig(libsidplay)
+BuildRequires:	sidplay-devel
 # do not remove sdl-headers needed by sid-ogg.Sflo
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(libsidplayfp)
