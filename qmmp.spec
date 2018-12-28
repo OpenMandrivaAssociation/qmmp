@@ -351,7 +351,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}/Output/libpulseaudio.so
 %{_libdir}/%{name}/Output/libnull.so
 %{_libdir}/%{name}/Output/libqtmultimedia.so
-%{_libdir}/%{name}/Output/libshout.so
+#{_libdir}/%{name}/Output/libshout.so
 
 %{_libdir}/%{name}/General/libnotifier.so
 %{_libdir}/%{name}/General/libscrobbler.so
@@ -377,7 +377,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}/CommandLineOptions/libstatusoption.so
 %{_libdir}/%{name}/CommandLineOptions/libplaylistoption.so
 
-%{_libdir}/%{name}/Effect/libsoxr.so
+#{_libdir}/%{name}/Effect/libsoxr.so
 %{_libdir}/%{name}/Effect/libbs2b.so
 %{_libdir}/%{name}/Effect/libladspa.so
 %{_libdir}/%{name}/Effect/libcrossfade.so
