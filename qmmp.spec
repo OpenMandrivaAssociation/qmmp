@@ -246,7 +246,7 @@ This is the Jack Output Plugin for Qmmp.
 
 %files -n %{name}-jack
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Output/libjack.so
+#{_libdir}/%{name}/Output/libjack.so
 
 
 #----------------------------------------------------------------------------
