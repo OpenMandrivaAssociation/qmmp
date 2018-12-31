@@ -17,7 +17,7 @@
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
 Version:	1.2.5
-Release:	2%{?extrarelsuffix}
+Release:	3%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
@@ -89,7 +89,8 @@ Suggests:	%{name}-musepack = %{EVRD}
 Suggests:	%{name}-oss = %{EVRD}
 Suggests:	%{name}-wavpack = %{EVRD}
 Suggests:	%{name}-plugin-pack
-Requires:	wildmidi
+#This package depend on timidity-patch-SGMPlusStein and it cost us 618.39 MB disc space... Not needed, make it suggects (penguin)
+Suggests:	wildmidi
 
 %description
 This program is an audio-player, written with help of Qt library. The user
