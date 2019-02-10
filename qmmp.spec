@@ -16,14 +16,12 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	1.2.6
+Version:	1.3.0
 Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
-# Disable patch, should be fixed in upstream.
-#Patch1:		qmmp-1.2.0-ffmpeg3.5.patch
 
 BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
@@ -89,7 +87,7 @@ Suggests:	%{name}-musepack = %{EVRD}
 Suggests:	%{name}-oss = %{EVRD}
 Suggests:	%{name}-wavpack = %{EVRD}
 Suggests:	%{name}-plugin-pack
-#This package depend on timidity-patch-SGMPlusStein and it cost us 618.39 MB disc space... Not needed, make it suggects (penguin)
+#This package depend on timidity-patch-SGMPlusStein and it cost us 618.39 MB disc space... Not needed, make it suggests (penguin)
 Suggests:	wildmidi
 
 %description
@@ -403,7 +401,7 @@ This contains basic plug-in distribution.
 
 %prep
 %setup -q
-#apply_patches
+
 
 %build
 #oss3 support is deprecated upstream for now I'll enable it ...
@@ -413,7 +411,7 @@ This contains basic plug-in distribution.
 	-DUSE_RPATH=TRUE \
 	-DCMAKE_INSTALL_PREFIX=/usr
 
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
