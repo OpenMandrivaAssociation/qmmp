@@ -220,7 +220,7 @@ This is the FFMPEG Input Plugin for Qmmp.
 
 %files -n %{name}-ffmpeg
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libffmpeg.so
+#{_libdir}/%{name}/Input/libffmpeg.so
 
 %else
 
