@@ -261,7 +261,7 @@ This is the Modplug Input Plugin for Qmmp.
 
 %files -n %{name}-modplug
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libmodplug.so
+#{_libdir}/%{name}/Input/libmodplug.so
 
 #----------------------------------------------------------------------------
 
