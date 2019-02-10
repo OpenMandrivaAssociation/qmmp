@@ -64,6 +64,7 @@ BuildRequires:	pkgconfig(opusfile)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:	pkgconfig(shout)
 BuildRequires:	pkgconfig(libarchive)
+BuildRequires:	qt5-qtbase-database-plugin-tds
 
 
 %if %{build_plf}
