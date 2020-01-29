@@ -1,4 +1,5 @@
 %define major		1
+%define major2		%(echo %{version} |cut -d. -f1-2)
 %define libname		%mklibname %{name} %{major}
 %define devname		%mklibname %{name} -d
 %define libnameui	%mklibname qmmpui %{major}
@@ -16,7 +17,7 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	1.2.6
+Version:	1.3.6
 Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
@@ -28,7 +29,6 @@ Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libgme-devel
-BuildRequires:	libmpcdec-devel
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist
 BuildRequires:	pkgconfig(Qt5Multimedia)
@@ -85,7 +85,8 @@ Suggests:	%{name}-ffmpeg-legacy = %{EVRD}
 %endif
 Suggests:	%{name}-jack = %{EVRD}
 Suggests:	%{name}-modplug = %{EVRD}
-Suggests:	%{name}-musepack = %{EVRD}
+# Seems to be removed in 1.3.x?
+Obsoletes:	%{name}-musepack < %{EVRD}
 Suggests:	%{name}-oss = %{EVRD}
 Suggests:	%{name}-wavpack = %{EVRD}
 Suggests:	%{name}-plugin-pack
@@ -205,7 +206,7 @@ This package is in restricted repository because AAC codec is patent-protected.
 
 %files -n %{name}-aac
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libaac.so
+%{_libdir}/%{name}-%{major2}/Input/libaac.so
 %endif
 
 #----------------------------------------------------------------------------
@@ -221,7 +222,7 @@ This is the FFMPEG Input Plugin for Qmmp.
 
 %files -n %{name}-ffmpeg
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libffmpeg.so
+%{_libdir}/%{name}-%{major2}/Input/libffmpeg.so
 
 %else
 
@@ -234,7 +235,7 @@ This is the FFMPEG Input Plugin for Qmmp.
 
 %files -n %{name}-ffmpeg-legacy
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libffmpeg_legacy.so
+%{_libdir}/%{name}-%{major2}/Input/libffmpeg_legacy.so
 %endif
 
 #----------------------------------------------------------------------------
@@ -248,7 +249,7 @@ This is the Jack Output Plugin for Qmmp.
 
 %files -n %{name}-jack
 %doc AUTHORS ChangeLog
-#{_libdir}/%{name}/Output/libjack.so
+#{_libdir}/%{name}-%{major2}/Output/libjack.so
 
 
 #----------------------------------------------------------------------------
@@ -262,20 +263,7 @@ This is the Modplug Input Plugin for Qmmp.
 
 %files -n %{name}-modplug
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libmodplug.so
-
-#----------------------------------------------------------------------------
-
-%package -n %{name}-musepack
-Summary:	Qmmp MusePack Output Plugin
-Group:		Sound
-
-%description -n %{name}-musepack
-This is the Musepack Input Plugin for Qmmp.
-
-%files -n %{name}-musepack
-%doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libmpc.so
+%{_libdir}/%{name}-%{major2}/Input/libmodplug.so
 
 #----------------------------------------------------------------------------
 
@@ -288,7 +276,7 @@ This is the Jack OSS Plugin for Qmmp.
 
 %files -n %{name}-oss
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Output/liboss.so
+%{_libdir}/%{name}-%{major2}/Output/liboss.so
 
 #----------------------------------------------------------------------------
 
@@ -301,7 +289,7 @@ This is the WavPack Input Plugin for Qmmp.
 
 %files -n %{name}-wavpack
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libwavpack.so
+%{_libdir}/%{name}-%{major2}/Input/libwavpack.so
 
 #----------------------------------------------------------------------------
 %package -n %{name}-opus
@@ -313,7 +301,7 @@ This is the Opus Input Plugin for Qmmp.
 
 %files -n %{name}-opus
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libopus.so
+%{_libdir}/%{name}-%{major2}/Input/libopus.so
 
 #----------------------------------------------------------------------------
 %package -n %{name}-sid
@@ -325,7 +313,7 @@ This is the SID Input Plugin for Qmmp.
 
 %files -n %{name}-sid
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libsid.so
+%{_libdir}/%{name}-%{major2}/Input/libsid.so
 
 #----------------------------------------------------------------------------
 
@@ -339,65 +327,71 @@ This contains basic plug-in distribution.
 
 %files -n %{name}-plugins
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}/Input/libflac.so
-%{_libdir}/%{name}/Input/libmad.so
-%{_libdir}/%{name}/Input/libsndfile.so
-%{_libdir}/%{name}/Input/libvorbis.so
-%{_libdir}/%{name}/Input/libcdaudio.so
-%{_libdir}/%{name}/Input/libcue.so
-%{_libdir}/%{name}/Input/libgme.so
-%{_libdir}/%{name}/Input/libwildmidi.so
-%{_libdir}/%{name}/Input/libarchive.so
+%{_libdir}/%{name}-%{major2}/Input/libflac.so
+%{_libdir}/%{name}-%{major2}/Input/libsndfile.so
+%{_libdir}/%{name}-%{major2}/Input/libvorbis.so
+%{_libdir}/%{name}-%{major2}/Input/libcdaudio.so
+%{_libdir}/%{name}-%{major2}/Input/libcue.so
+%{_libdir}/%{name}-%{major2}/Input/libgme.so
+%{_libdir}/%{name}-%{major2}/Input/libwildmidi.so
+%{_libdir}/%{name}-%{major2}/Input/libarchive.so
+%{_libdir}/%{name}-%{major2}/Input/libmpeg.so
 
-%{_libdir}/%{name}/Output/libalsa.so
-%{_libdir}/%{name}/Output/libpulseaudio.so
-%{_libdir}/%{name}/Output/libnull.so
-%{_libdir}/%{name}/Output/libqtmultimedia.so
-#{_libdir}/%{name}/Output/libshout.so
+%{_datadir}/metainfo/qmmp.appdata.xml
 
-%{_libdir}/%{name}/General/libnotifier.so
-%{_libdir}/%{name}/General/libscrobbler.so
-%{_libdir}/%{name}/General/libstatusicon.so
-%{_libdir}/%{name}/General/libfileops.so
-%{_libdir}/%{name}/General/libhotkey.so
-%{_libdir}/%{name}/General/liblyrics.so
-%{_libdir}/%{name}/General/libmpris.so
-%{_libdir}/%{name}/General/libcovermanager.so
-%{_libdir}/%{name}/General/libkdenotify.so
-%{_libdir}/%{name}/General/libstreambrowser.so
-%{_libdir}/%{name}/General/libconverter.so
-%{_libdir}/%{name}/General/libcopypaste.so
-%{_libdir}/%{name}/General/libtrackchange.so
-%{_libdir}/%{name}/General/libudisks2.so
-%{_libdir}/%{name}/General/libgnomehotkey.so
-%{_libdir}/%{name}/General/librgscan.so
+%{_libdir}/%{name}-%{major2}/Output/libalsa.so
+%{_libdir}/%{name}-%{major2}/Output/libjack.so
+%{_libdir}/%{name}-%{major2}/Output/libpulseaudio.so
+%{_libdir}/%{name}-%{major2}/Output/libnull.so
+%{_libdir}/%{name}-%{major2}/Output/libqtmultimedia.so
+%{_libdir}/%{name}-%{major2}/Output/libshout.so
 
-%{_libdir}/%{name}/PlayListFormats/*
+%{_libdir}/%{name}-%{major2}/General/libnotifier.so
+%{_libdir}/%{name}-%{major2}/General/libscrobbler.so
+%{_libdir}/%{name}-%{major2}/General/libstatusicon.so
+%{_libdir}/%{name}-%{major2}/General/libfileops.so
+%{_libdir}/%{name}-%{major2}/General/libhistory.so
+%{_libdir}/%{name}-%{major2}/General/libhotkey.so
+%{_libdir}/%{name}-%{major2}/General/liblyrics.so
+%{_libdir}/%{name}-%{major2}/General/libmpris.so
+%{_libdir}/%{name}-%{major2}/General/libcovermanager.so
+%{_libdir}/%{name}-%{major2}/General/libkdenotify.so
+%{_libdir}/%{name}-%{major2}/General/libstreambrowser.so
+%{_libdir}/%{name}-%{major2}/General/libconverter.so
+%{_libdir}/%{name}-%{major2}/General/libcopypaste.so
+%{_libdir}/%{name}-%{major2}/General/libtrackchange.so
+%{_libdir}/%{name}-%{major2}/General/libudisks2.so
+%{_libdir}/%{name}-%{major2}/General/libgnomehotkey.so
+%{_libdir}/%{name}-%{major2}/General/librgscan.so
 
-%{_libdir}/%{name}/CommandLineOptions/libincdecvolumeoption.so
-%{_libdir}/%{name}/CommandLineOptions/libseekoption.so
-%{_libdir}/%{name}/CommandLineOptions/libstatusoption.so
-%{_libdir}/%{name}/CommandLineOptions/libplaylistoption.so
+%{_libdir}/%{name}-%{major2}/PlayListFormats/*
 
-#{_libdir}/%{name}/Effect/libsoxr.so
-%{_libdir}/%{name}/Effect/libbs2b.so
-%{_libdir}/%{name}/Effect/libladspa.so
-%{_libdir}/%{name}/Effect/libcrossfade.so
-%{_libdir}/%{name}/Effect/libstereo.so
-%{_libdir}/%{name}/Effect/libfilewriter.so
+%{_libdir}/%{name}-%{major2}/CommandLineOptions/libincdecvolumeoption.so
+%{_libdir}/%{name}-%{major2}/CommandLineOptions/libseekoption.so
+%{_libdir}/%{name}-%{major2}/CommandLineOptions/libstatusoption.so
+%{_libdir}/%{name}-%{major2}/CommandLineOptions/libplaylistoption.so
 
-%{_libdir}/%{name}/Engines/libmplayer.so
+#{_libdir}/%{name}-%{major2}/Effect/libsoxr.so
+%{_libdir}/%{name}-%{major2}/Effect/libbs2b.so
+%{_libdir}/%{name}-%{major2}/Effect/libladspa.so
+%{_libdir}/%{name}-%{major2}/Effect/libcrossfade.so
+%{_libdir}/%{name}-%{major2}/Effect/libmonotostereo.so
+%{_libdir}/%{name}-%{major2}/Effect/libstereo.so
+%{_libdir}/%{name}-%{major2}/Effect/libsoxr.so
+%{_libdir}/%{name}-%{major2}/Effect/libfilewriter.so
 
-%{_libdir}/%{name}/FileDialogs/libqmmpfiledialog.so
-%{_libdir}/%{name}/FileDialogs/libtwopanelfiledialog.so
+%{_libdir}/%{name}-%{major2}/Engines/libmplayer.so
 
-%{_libdir}/%{name}/Transports/libhttp.so
-%{_libdir}/%{name}/Transports/libmms.so
+%{_libdir}/%{name}-%{major2}/FileDialogs/libqmmpfiledialog.so
+%{_libdir}/%{name}-%{major2}/FileDialogs/libtwopanelfiledialog.so
 
-%{_libdir}/%{name}/Visual/libanalyzer.so
-%{_libdir}/%{name}/Visual/libprojectm.so
+%{_libdir}/%{name}-%{major2}/Transports/libhttp.so
+%{_libdir}/%{name}-%{major2}/Transports/libmms.so
 
-%{_libdir}/%{name}/Ui
+%{_libdir}/%{name}-%{major2}/Visual/libanalyzer.so
+%{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
+
+%{_libdir}/%{name}-%{major2}/Ui
 
 #----------------------------------------------------------------------------
 
