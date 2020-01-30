@@ -66,8 +66,9 @@ BuildRequires:	pkgconfig(opusfile)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:	pkgconfig(shout)
 BuildRequires:	pkgconfig(libarchive)
-
-
+BuildRequires:	pkgconfig(jack)
+BuildRequires:	pkgconfig(shout)
+BuildRequires:	pkgconfig(soxr)
 %if %{build_plf}
 BuildRequires:	faad2-devel
 %else
