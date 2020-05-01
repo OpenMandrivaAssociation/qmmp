@@ -121,6 +121,7 @@ Main opportunities:
 %doc AUTHORS ChangeLog
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
+%{_datadir}/solid/actions/%{name}-opencda.desktop
 %{_iconsdir}/hicolor/*/apps/*
 %{_datadir}/%{name}
 
@@ -362,6 +363,8 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/General/libudisks2.so
 %{_libdir}/%{name}-%{major2}/General/libgnomehotkey.so
 %{_libdir}/%{name}-%{major2}/General/librgscan.so
+%{_libdir}/%{name}-%{major2}/General/liblistenbrainz.so
+%{_libdir}/%{name}-%{major2}/General/libsleepinhibitor.so
 
 %{_libdir}/%{name}-%{major2}/PlayListFormats/*
 
