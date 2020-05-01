@@ -17,14 +17,12 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	1.3.7
+Version:	1.4.0
 Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
-# Disable patch, should be fixed in upstream.
-#Patch1:		qmmp-1.2.0-ffmpeg3.5.patch
 
 BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
@@ -408,7 +406,7 @@ This contains basic plug-in distribution.
 	-DUSE_RPATH=TRUE \
 	-DCMAKE_INSTALL_PREFIX=/usr
 
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
