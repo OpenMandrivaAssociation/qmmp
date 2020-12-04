@@ -18,7 +18,7 @@
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
 Version:	1.4.2
-Release:	1%{?extrarelsuffix}
+Release:	2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
@@ -77,11 +77,7 @@ Requires:	%{libname} = %{EVRD}
 Requires:	%{libnameui} = %{EVRD}
 Requires:	%{name}-plugins = %{EVRD}
 Suggests:	%{name}-aac = %{EVRD}
-%if %{mdvver} >= 201210
 Suggests:	%{name}-ffmpeg = %{EVRD}
-%else
-Suggests:	%{name}-ffmpeg-legacy = %{EVRD}
-%endif
 Suggests:	%{name}-jack = %{EVRD}
 Suggests:	%{name}-modplug = %{EVRD}
 # Seems to be removed in 1.3.x?
@@ -211,8 +207,6 @@ This package is in restricted repository because AAC codec is patent-protected.
 
 #----------------------------------------------------------------------------
 
-#  ffmpeg-legacy in LTS
-%if %{mdvver} >= 201210
 %package -n %{name}-ffmpeg
 Summary:	Qmmp FFMPEG Input Plugin
 Group:		Sound
@@ -223,20 +217,6 @@ This is the FFMPEG Input Plugin for Qmmp.
 %files -n %{name}-ffmpeg
 %doc AUTHORS ChangeLog
 %{_libdir}/%{name}-%{major2}/Input/libffmpeg.so
-
-%else
-
-%package -n %{name}-ffmpeg-legacy
-Summary:	Qmmp FFMPEG Input Plugin
-Group:		Sound
-
-%description -n %{name}-ffmpeg-legacy
-This is the FFMPEG Input Plugin for Qmmp.
-
-%files -n %{name}-ffmpeg-legacy
-%doc AUTHORS ChangeLog
-%{_libdir}/%{name}-%{major2}/Input/libffmpeg_legacy.so
-%endif
 
 #----------------------------------------------------------------------------
 
