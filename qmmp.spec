@@ -333,6 +333,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Output/libnull.so
 %{_libdir}/%{name}-%{major2}/Output/libqtmultimedia.so
 %{_libdir}/%{name}-%{major2}/Output/libshout.so
+%{_libdir}/%{name}-%{major2}/Output/libpipewire.so
 
 %{_libdir}/%{name}-%{major2}/General/libnotifier.so
 %{_libdir}/%{name}-%{major2}/General/libscrobbler.so
