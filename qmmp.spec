@@ -27,6 +27,7 @@ Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libgme-devel
+BuildRequires:	libmpcdec-devel
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-linguist
 BuildRequires:	pkgconfig(Qt5Multimedia)
@@ -48,6 +49,9 @@ BuildRequires:	pkgconfig(libmms)
 BuildRequires:	pkgconfig(libmodplug)
 BuildRequires:	pkgconfig(libprojectM)
 BuildRequires:	pkgconfig(libpulse)
+BuildRequires:	pkgconfig(libpipewire-0.3)
+BuildRequires:	pkgconfig(librcd)
+BuildRequires:	pkgconfig(libspa-0.2)
 BuildRequires:  pkgconfig(libsidplayfp)
 BuildRequires:	pkgconfig(mad)
 BuildRequires:  pkgconfig(libmpg123)
@@ -336,6 +340,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/General/libfileops.so
 %{_libdir}/%{name}-%{major2}/General/libhistory.so
 %{_libdir}/%{name}-%{major2}/General/libhotkey.so
+%{_libdir}/%{name}-%{major2}/General/liblibrary.so
 %{_libdir}/%{name}-%{major2}/General/liblyrics.so
 %{_libdir}/%{name}-%{major2}/General/libmpris.so
 %{_libdir}/%{name}-%{major2}/General/libcovermanager.so
