@@ -18,7 +18,7 @@
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
 Version:	1.5.0
-Release:	1%{?extrarelsuffix}
+Release:	2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
@@ -76,23 +76,22 @@ BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(shout)
 BuildRequires:	pkgconfig(soxr)
 %if %{build_plf}
-BuildRequires:	faad2-devel
-%else
-BuildConflicts:	faad2-devel
+BuildRequires:	pkgconfig(faad2)
+BuildConflicts: pkgconfig(fdk-aac)
 %endif
 Requires:	unzip
 Requires:	%{libname} = %{EVRD}
 Requires:	%{libnameui} = %{EVRD}
 Requires:	%{name}-plugins = %{EVRD}
-Suggests:	%{name}-aac = %{EVRD}
-Suggests:	%{name}-ffmpeg = %{EVRD}
-Suggests:	%{name}-jack = %{EVRD}
-Suggests:	%{name}-modplug = %{EVRD}
+Recommends:	%{name}-aac = %{EVRD}
+Recommends:	%{name}-ffmpeg = %{EVRD}
+Recommends:	%{name}-jack = %{EVRD}
+Recommends:	%{name}-modplug = %{EVRD}
 # Seems to be removed in 1.3.x?
 Obsoletes:	%{name}-musepack < %{EVRD}
-Suggests:	%{name}-oss = %{EVRD}
-Suggests:	%{name}-wavpack = %{EVRD}
-Suggests:	%{name}-plugin-pack
+Recommends:	%{name}-oss = %{EVRD}
+Recommends:	%{name}-wavpack = %{EVRD}
+Recommends:	%{name}-plugin-pack
 #This package depend on timidity-patch-SGMPlusStein and it cost us 618.39 MB disc space... Not needed, make it suggects (penguin)
 Suggests:	wildmidi
 
