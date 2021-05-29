@@ -77,7 +77,10 @@ BuildRequires:	pkgconfig(shout)
 BuildRequires:	pkgconfig(soxr)
 %if %{build_plf}
 BuildRequires:	pkgconfig(faad2)
-BuildConflicts: pkgconfig(fdk-aac)
+BuildRequires:	pkgconfig(fdk-aac)
+%else
+BuildConflicts: pkgconfig(faad2)
+BuildConflicts:	pkgconfig(fdk-aac)
 %endif
 Requires:	unzip
 Requires:	%{libname} = %{EVRD}
