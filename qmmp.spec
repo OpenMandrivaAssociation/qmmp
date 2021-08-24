@@ -28,11 +28,18 @@ BuildRequires:	cmake
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libgme-devel
 BuildRequires:	libmpcdec-devel
-BuildRequires:	qt5-devel
-BuildRequires:	qt5-linguist
-BuildRequires:	pkgconfig(Qt5Multimedia)
-BuildRequires:	pkgconfig(Qt5X11Extras)
-BuildRequires:	cmake(Qt5LinguistTools)
+#BuildRequires:	qt5-devel
+#BuildRequires:	qt5-linguist
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6Network)
+BuildRequires:	cmake(Qt6DBus)
+BuildRequires:	cmake(Qt6OpenGLWidgets)
+BuildRequires:	cmake(Qt6Sql)
+
+#BuildRequires:	pkgconfig(Qt5Multimedia)
+#BuildRequires:	pkgconfig(Qt5X11Extras)
+#BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	wildmidi-devel
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(enca)
