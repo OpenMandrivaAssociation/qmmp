@@ -25,6 +25,7 @@ Url:		http://qmmp.ylsoftware.com/index_en.php
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 
 BuildRequires:	cmake
+BuildRequires:	qmake-qt6
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libgme-devel
 BuildRequires:	libmpcdec-devel
@@ -404,7 +405,7 @@ This contains basic plug-in distribution.
 
 %build
 #oss3 support is deprecated upstream for now I'll enable it ...
-%cmake_qt5 -DUSE_HAL:BOOL=FALSE \
+%cmake_qt6 -DUSE_HAL:BOOL=FALSE \
 	-DUSE_OSS:BOOL=TRUE \
 	-DUSE_OSS:UDISKS2=TRUE \
 	-DUSE_RPATH=TRUE \
