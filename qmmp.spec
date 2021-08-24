@@ -405,7 +405,7 @@ This contains basic plug-in distribution.
 
 %build
 #oss3 support is deprecated upstream for now I'll enable it ...
-%cmake_Qt6 -DUSE_HAL:BOOL=FALSE \
+%cmake -DUSE_HAL:BOOL=FALSE \
 	-DUSE_OSS:BOOL=TRUE \
 	-DUSE_OSS:UDISKS2=TRUE \
 	-DUSE_RPATH=TRUE \
