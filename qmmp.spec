@@ -1,4 +1,4 @@
-%define major		1
+%define major		2
 %define major2		%(echo %{version} |cut -d. -f1-2)
 %define libname		%mklibname %{name} %{major}
 %define devname		%mklibname %{name} -d
@@ -92,6 +92,8 @@ BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(jack)
 BuildRequires:	pkgconfig(shout)
 BuildRequires:	pkgconfig(soxr)
+BuildRequires:	pkgconfig(vulkan)
+BuildRequires:	vulkan-headers
 %if %{build_plf}
 BuildRequires:	pkgconfig(faad2)
 BuildRequires:	pkgconfig(fdk-aac)
