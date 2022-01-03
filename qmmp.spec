@@ -94,6 +94,7 @@ BuildRequires:	pkgconfig(shout)
 BuildRequires:	pkgconfig(soxr)
 BuildRequires:	pkgconfig(vulkan)
 BuildRequires:	vulkan-headers
+BuildRequires:	pkgconfig(xkbcommon)
 %if %{build_plf}
 BuildRequires:	pkgconfig(faad2)
 BuildRequires:	pkgconfig(fdk-aac)
@@ -420,6 +421,11 @@ This contains basic plug-in distribution.
 	-DUSE_OSS:BOOL=TRUE \
 	-DUSE_OSS:UDISKS2=TRUE \
 	-DUSE_RPATH=TRUE \
+	-DUSE_FLAC=TRUE \
+	-DUSE_VORBIS=TRUE \
+	-DUSE_MPC=TRUE \
+	-DUSE_ARCHIVE=TRUE \
+	-DUSE_FFMPEG=TRUE \
 	-DCMAKE_INSTALL_PREFIX=/usr
 
 %make_build
