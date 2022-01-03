@@ -311,7 +311,7 @@ This is the Opus Input Plugin for Qmmp.
 
 %files -n %{name}-opus
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}-%{major2}/Input/libopus.so
+#{_libdir}/%{name}-%{major2}/Input/libopus.so
 
 #----------------------------------------------------------------------------
 %package -n %{name}-sid
