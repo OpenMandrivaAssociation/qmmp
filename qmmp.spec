@@ -337,15 +337,15 @@ This contains basic plug-in distribution.
 
 %files -n %{name}-plugins
 %doc AUTHORS ChangeLog
-%{_libdir}/%{name}-%{major2}/Input/libflac.so
+#{_libdir}/%{name}-%{major2}/Input/libflac.so
 %{_libdir}/%{name}-%{major2}/Input/libsndfile.so
-%{_libdir}/%{name}-%{major2}/Input/libvorbis.so
+#{_libdir}/%{name}-%{major2}/Input/libvorbis.so
 %{_libdir}/%{name}-%{major2}/Input/libcdaudio.so
 %{_libdir}/%{name}-%{major2}/Input/libcue.so
 %{_libdir}/%{name}-%{major2}/Input/libgme.so
 %{_libdir}/%{name}-%{major2}/Input/libwildmidi.so
-%{_libdir}/%{name}-%{major2}/Input/libarchive.so
-%{_libdir}/%{name}-%{major2}/Input/libmpeg.so
+#{_libdir}/%{name}-%{major2}/Input/libarchive.so
+#{_libdir}/%{name}-%{major2}/Input/libmpeg.so
 
 %{_datadir}/metainfo/qmmp.appdata.xml
 
@@ -353,7 +353,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Output/libjack.so
 %{_libdir}/%{name}-%{major2}/Output/libpulseaudio.so
 %{_libdir}/%{name}-%{major2}/Output/libnull.so
-%{_libdir}/%{name}-%{major2}/Output/libqtmultimedia.so
+#{_libdir}/%{name}-%{major2}/Output/libqtmultimedia.so
 %{_libdir}/%{name}-%{major2}/Output/libshout.so
 %{_libdir}/%{name}-%{major2}/Output/libpipewire.so
 
@@ -369,12 +369,12 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/General/libcovermanager.so
 %{_libdir}/%{name}-%{major2}/General/libkdenotify.so
 %{_libdir}/%{name}-%{major2}/General/libstreambrowser.so
-%{_libdir}/%{name}-%{major2}/General/libconverter.so
+#{_libdir}/%{name}-%{major2}/General/libconverter.so
 %{_libdir}/%{name}-%{major2}/General/libcopypaste.so
 %{_libdir}/%{name}-%{major2}/General/libtrackchange.so
 %{_libdir}/%{name}-%{major2}/General/libudisks2.so
 %{_libdir}/%{name}-%{major2}/General/libgnomehotkey.so
-%{_libdir}/%{name}-%{major2}/General/librgscan.so
+#{_libdir}/%{name}-%{major2}/General/librgscan.so
 %{_libdir}/%{name}-%{major2}/General/liblistenbrainz.so
 %{_libdir}/%{name}-%{major2}/General/libsleepinhibitor.so
 
