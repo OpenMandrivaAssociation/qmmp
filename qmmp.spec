@@ -410,9 +410,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Transports/libmms.so
 
 %{_libdir}/%{name}-%{major2}/Visual/libanalyzer.so
-%ifnarch %aarch64
 %{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
-%endif
 
 %{_libdir}/%{name}-%{major2}/Ui
 
