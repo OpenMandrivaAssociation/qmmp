@@ -36,8 +36,8 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6GuiTools)
 BuildRequires:	cmake(Qt6Widgets)
-#BuildRequires:	cmake(Qt6Multimedia)
-BuildRequires:	%{_lib}Qt6Multimedia-devel
+BuildRequires:	cmake(Qt6Multimedia)
+#BuildRequires:	%{_lib}Qt6Multimedia-devel
 BuildRequires:	cmake(Qt6Network)
 BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6OpenGLWidgets)
@@ -355,7 +355,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Output/libjack.so
 %{_libdir}/%{name}-%{major2}/Output/libpulseaudio.so
 %{_libdir}/%{name}-%{major2}/Output/libnull.so
-#{_libdir}/%{name}-%{major2}/Output/libqtmultimedia.so
+%{_libdir}/%{name}-%{major2}/Output/libqtmultimedia.so
 %{_libdir}/%{name}-%{major2}/Output/libshout.so
 %{_libdir}/%{name}-%{major2}/Output/libpipewire.so
 
