@@ -77,7 +77,7 @@ BuildRequires:  pkgconfig(libmpg123)
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:  pkgconfig(shout)
 BuildRequires:	pkgconfig(sndfile)
-BuildRequires:	pkgconfig(taglib)
+BuildRequires:	pkgconfig(taglib) >= 1.12
 BuildRequires:	pkgconfig(udisks2)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(wavpack)
@@ -339,15 +339,18 @@ This contains basic plug-in distribution.
 
 %files -n %{name}-plugins
 %doc AUTHORS ChangeLog
-#{_libdir}/%{name}-%{major2}/Input/libflac.so
+
+%{_libdir}/%{name}-%{major2}/Input/libarchive.so
+%{_libdir}/%{name}-%{major2}/Input/libffmpeg.so
+%{_libdir}/%{name}-%{major2}/Input/libflac.so
 %{_libdir}/%{name}-%{major2}/Input/libsndfile.so
-#{_libdir}/%{name}-%{major2}/Input/libvorbis.so
+%{_libdir}/%{name}-%{major2}/Input/libopus.so
+%{_libdir}/%{name}-%{major2}/Input/libvorbis.so
 %{_libdir}/%{name}-%{major2}/Input/libcdaudio.so
 %{_libdir}/%{name}-%{major2}/Input/libcue.so
 %{_libdir}/%{name}-%{major2}/Input/libgme.so
 %{_libdir}/%{name}-%{major2}/Input/libwildmidi.so
-#{_libdir}/%{name}-%{major2}/Input/libarchive.so
-#{_libdir}/%{name}-%{major2}/Input/libmpeg.so
+%{_libdir}/%{name}-%{major2}/Input/libmpeg.so
 
 %{_datadir}/metainfo/qmmp.appdata.xml
 
@@ -359,6 +362,8 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Output/libshout.so
 %{_libdir}/%{name}-%{major2}/Output/libpipewire.so
 
+%{_libdir}/%{name}-%{major2}/General/libconverter.so
+%{_libdir}/%{name}-%{major2}/General/librgscan.so
 %{_libdir}/%{name}-%{major2}/General/libnotifier.so
 %{_libdir}/%{name}-%{major2}/General/libscrobbler.so
 %{_libdir}/%{name}-%{major2}/General/libstatusicon.so
@@ -414,8 +419,7 @@ This contains basic plug-in distribution.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-#autopatch -p1
+%autosetup -p1
 
 %build
 #oss3 support is deprecated upstream for now I'll enable it ...
@@ -428,6 +432,7 @@ This contains basic plug-in distribution.
 	-DUSE_MPC=TRUE \
 	-DUSE_ARCHIVE=TRUE \
 	-DUSE_FFMPEG=TRUE \
+	-DUSE_OPUS=TRUE \
 	-DCMAKE_INSTALL_PREFIX=/usr
 
 %make_build
