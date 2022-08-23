@@ -45,7 +45,7 @@ BuildRequires:	cmake(Qt6Sql)
 BuildRequires:	cmake(Qt6OpenGL)
 BuildRequires:	cmake(Qt6OpenGLWidgets)
 #BuildRequires:	cmake(Qt6Linguist)
-#BuildRequires:	cmake(qt6linguisttools)
+BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	qt6-qttools
 BuildRequires:	pkgconfig(opengl)
 
