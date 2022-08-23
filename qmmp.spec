@@ -268,16 +268,16 @@ This is the Jack Output Plugin for Qmmp.
 
 #----------------------------------------------------------------------------
 
-%package -n %{name}-modplug
-Summary:	Qmmp Modplug Input Plugin
-Group:		Sound
+#%package -n %{name}-modplug
+#Summary:	Qmmp Modplug Input Plugin
+#Group:		Sound
 
-%description -n %{name}-modplug
-This is the Modplug Input Plugin for Qmmp.
+#%description -n %{name}-modplug
+#This is the Modplug Input Plugin for Qmmp.
 
-%files -n %{name}-modplug
-%doc AUTHORS ChangeLog
-%{_libdir}/%{name}-%{major2}/Input/libmodplug.so
+#%files -n %{name}-modplug
+#%doc AUTHORS ChangeLog
+#{_libdir}/%{name}-%{major2}/Input/libmodplug.so
 
 #----------------------------------------------------------------------------
 
