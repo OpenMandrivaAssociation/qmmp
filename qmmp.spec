@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 %define major		2
 %define major2		%(echo %{version} |cut -d. -f1-2)
 %define libname		%mklibname %{name} %{major}
@@ -17,8 +19,8 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	2.0.3
-Release:	2%{?extrarelsuffix}
+Version:	2.1.1
+Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		http://qmmp.ylsoftware.com/index_en.php
@@ -45,10 +47,10 @@ BuildRequires:	cmake(Qt6Sql)
 BuildRequires:	cmake(Qt6OpenGL)
 BuildRequires:	cmake(Qt6OpenGLWidgets)
 #BuildRequires:	cmake(Qt6Linguist)
-#BuildRequires:	cmake(qt6linguisttools)
+BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	qt6-qttools
 BuildRequires:	pkgconfig(opengl)
-
+BuildRequires:  qt6-qtmultimedia-gstreamer
 #BuildRequires:	pkgconfig(Qt5Multimedia)
 #BuildRequires:	pkgconfig(Qt5X11Extras)
 #BuildRequires:	cmake(Qt5LinguistTools)
@@ -66,7 +68,7 @@ BuildRequires:	pkgconfig(libcdio_paranoia)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libmms)
 BuildRequires:	pkgconfig(libmodplug)
-BuildRequires:	pkgconfig(libprojectM)
+#BuildRequires:	pkgconfig(libprojectM)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpipewire-0.3)
 BuildRequires:	pkgconfig(librcd)
@@ -266,16 +268,16 @@ This is the Jack Output Plugin for Qmmp.
 
 #----------------------------------------------------------------------------
 
-%package -n %{name}-modplug
-Summary:	Qmmp Modplug Input Plugin
-Group:		Sound
+#%package -n %{name}-modplug
+#Summary:	Qmmp Modplug Input Plugin
+#Group:		Sound
 
-%description -n %{name}-modplug
-This is the Modplug Input Plugin for Qmmp.
+#%description -n %{name}-modplug
+#This is the Modplug Input Plugin for Qmmp.
 
-%files -n %{name}-modplug
-%doc AUTHORS ChangeLog
-%{_libdir}/%{name}-%{major2}/Input/libmodplug.so
+#%files -n %{name}-modplug
+#%doc AUTHORS ChangeLog
+#{_libdir}/%{name}-%{major2}/Input/libmodplug.so
 
 #----------------------------------------------------------------------------
 
@@ -379,7 +381,7 @@ This contains basic plug-in distribution.
 #{_libdir}/%{name}-%{major2}/General/libconverter.so
 %{_libdir}/%{name}-%{major2}/General/libcopypaste.so
 %{_libdir}/%{name}-%{major2}/General/libtrackchange.so
-%{_libdir}/%{name}-%{major2}/General/libudisks2.so
+%{_libdir}/%{name}-%{major2}/General/libudisks.so
 %{_libdir}/%{name}-%{major2}/General/libgnomehotkey.so
 #{_libdir}/%{name}-%{major2}/General/librgscan.so
 %{_libdir}/%{name}-%{major2}/General/liblistenbrainz.so
@@ -410,7 +412,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Transports/libmms.so
 
 %{_libdir}/%{name}-%{major2}/Visual/libanalyzer.so
-%{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
+#{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
 
 %{_libdir}/%{name}-%{major2}/Ui
 
