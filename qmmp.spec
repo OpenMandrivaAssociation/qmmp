@@ -381,7 +381,7 @@ This contains basic plug-in distribution.
 #{_libdir}/%{name}-%{major2}/General/libconverter.so
 %{_libdir}/%{name}-%{major2}/General/libcopypaste.so
 %{_libdir}/%{name}-%{major2}/General/libtrackchange.so
-#{_libdir}/%{name}-%{major2}/General/libudisks2.so
+%{_libdir}/%{name}-%{major2}/General/libudisks.so
 %{_libdir}/%{name}-%{major2}/General/libgnomehotkey.so
 #{_libdir}/%{name}-%{major2}/General/librgscan.so
 %{_libdir}/%{name}-%{major2}/General/liblistenbrainz.so
