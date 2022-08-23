@@ -48,7 +48,7 @@ BuildRequires:	cmake(Qt6OpenGLWidgets)
 BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	qt6-qttools
 BuildRequires:	pkgconfig(opengl)
-
+BuildRequires:  qt6-qtmultimedia-gstreamer
 #BuildRequires:	pkgconfig(Qt5Multimedia)
 #BuildRequires:	pkgconfig(Qt5X11Extras)
 #BuildRequires:	cmake(Qt5LinguistTools)
