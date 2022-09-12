@@ -20,11 +20,12 @@
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
 Version:	2.1.1
-Release:	1%{?extrarelsuffix}
+Release:	2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
-Url:		http://qmmp.ylsoftware.com/index_en.php
+Url:		http://qmmp.ylsoftware.com/
 Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+Patch0:		qmmp-2.1.1-compile.patch
 
 BuildRequires:	cmake
 BuildRequires:	cmake(qt6)
@@ -68,7 +69,7 @@ BuildRequires:	pkgconfig(libcdio_paranoia)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libmms)
 BuildRequires:	pkgconfig(libmodplug)
-#BuildRequires:	pkgconfig(libprojectM)
+BuildRequires:	pkgconfig(libprojectM)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpipewire-0.3)
 BuildRequires:	pkgconfig(librcd)
@@ -412,7 +413,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Transports/libmms.so
 
 %{_libdir}/%{name}-%{major2}/Visual/libanalyzer.so
-#{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
+%optional %{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
 
 %{_libdir}/%{name}-%{major2}/Ui
 
