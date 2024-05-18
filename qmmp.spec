@@ -19,12 +19,12 @@
 
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
-Version:	2.1.5
+Version:	2.1.8
 Release:	1%{?extrarelsuffix}1
 License:	GPLv2+
 Group:		Sound
-Url:		http://qmmp.ylsoftware.com/
-Source:		http://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
+Url:		https://qmmp.ylsoftware.com/
+Source:		https://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 Patch0:		qmmp-2.1.1-compile.patch
 
 BuildRequires:	cmake
