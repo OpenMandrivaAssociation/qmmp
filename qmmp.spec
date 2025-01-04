@@ -355,7 +355,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Input/libwildmidi.so
 %{_libdir}/%{name}-%{major2}/Input/libmpeg.so
 
-%{_datadir}/metainfo/qmmp.appdata.xml
+%{_datadir}/metainfo/com.ylsoftware.qmmp.metainfo.xml
 
 %{_libdir}/%{name}-%{major2}/Output/libalsa.so
 %{_libdir}/%{name}-%{major2}/Output/libjack.so
