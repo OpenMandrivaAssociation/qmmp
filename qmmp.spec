@@ -36,6 +36,7 @@ BuildRequires:	libmpcdec-devel
 #BuildRequires:	qt5-devel
 #BuildRequires:	qt5-linguist
 BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6GuiTools)
 BuildRequires:	cmake(Qt6Widgets)
