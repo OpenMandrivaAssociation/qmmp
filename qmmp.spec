@@ -243,45 +243,6 @@ This package is in restricted repository because AAC codec is patent-protected.
 
 #----------------------------------------------------------------------------
 
-%package -n %{name}-ffmpeg
-Summary:	Qmmp FFMPEG Input Plugin
-Group:		Sound
-
-%description -n %{name}-ffmpeg
-This is the FFMPEG Input Plugin for Qmmp.
-
-%files -n %{name}-ffmpeg
-%doc AUTHORS ChangeLog
-#{_libdir}/%{name}-%{major2}/Input/libffmpeg.so
-
-#----------------------------------------------------------------------------
-
-%package -n %{name}-jack
-Summary:	Qmmp Jack Output Plugin
-Group:		Sound
-
-%description -n %{name}-jack
-This is the Jack Output Plugin for Qmmp.
-
-%files -n %{name}-jack
-%doc AUTHORS ChangeLog
-#{_libdir}/%{name}-%{major2}/Output/libjack.so
-
-
-#----------------------------------------------------------------------------
-
-#%package -n %{name}-modplug
-#Summary:	Qmmp Modplug Input Plugin
-#Group:		Sound
-
-#%description -n %{name}-modplug
-#This is the Modplug Input Plugin for Qmmp.
-
-#%files -n %{name}-modplug
-#%doc AUTHORS ChangeLog
-#{_libdir}/%{name}-%{major2}/Input/libmodplug.so
-
-#----------------------------------------------------------------------------
 
 %package -n %{name}-oss
 Summary:	Qmmp OSS Output Plugin
@@ -405,13 +366,10 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/Effect/libsoxr.so
 %{_libdir}/%{name}-%{major2}/Effect/libfilewriter.so
 
-%{_libdir}/%{name}-%{major2}/Engines/libmplayer.so
-
 %{_libdir}/%{name}-%{major2}/FileDialogs/libqmmpfiledialog.so
 %{_libdir}/%{name}-%{major2}/FileDialogs/libtwopanelfiledialog.so
 
 %{_libdir}/%{name}-%{major2}/Transports/libhttp.so
-%{_libdir}/%{name}-%{major2}/Transports/libmms.so
 
 %{_libdir}/%{name}-%{major2}/Visual/libanalyzer.so
 %optional %{_libdir}/%{name}-%{major2}/Visual/libprojectm.so
