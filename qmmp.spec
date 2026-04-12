@@ -27,6 +27,7 @@ Url:		https://qmmp.ylsoftware.com/
 Source:		https://qmmp.ylsoftware.com/files/%{name}-%{version}.tar.bz2
 Patch0:		qmmp-2.1.1-compile.patch
 
+BuildRequires:	make
 BuildRequires:	cmake
 BuildRequires:	cmake(qt6)
 BuildRequires:	qmake-qt6
