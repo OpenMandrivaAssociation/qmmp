@@ -338,6 +338,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/General/libhotkey.so
 %{_libdir}/%{name}-%{major2}/General/liblibrary.so
 %{_libdir}/%{name}-%{major2}/General/liblyrics.so
+%{_libdir}/%{name}-%{major2}/General/libbatchtageditor.so
 %{_libdir}/%{name}-%{major2}/General/libmpris.so
 %{_libdir}/%{name}-%{major2}/General/libcovermanager.so
 %{_libdir}/%{name}-%{major2}/General/libkdenotify.so
