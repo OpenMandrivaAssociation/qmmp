@@ -1,6 +1,5 @@
-diff -up qmmp-2.1.1/src/plugins/Visual/projectm/projectmwidget.cpp.omv~ qmmp-2.1.1/src/plugins/Visual/projectm/projectmwidget.cpp
---- qmmp-2.1.1/src/plugins/Visual/projectm/projectmwidget.cpp.omv~	2022-09-12 04:08:59.442738511 +0200
-+++ qmmp-2.1.1/src/plugins/Visual/projectm/projectmwidget.cpp	2022-09-12 04:09:25.857878051 +0200
+--- qmmp-2.4.0/src/plugins/Visual/projectm/projectmwidget.cpp	2026-08-13 16:12:46.000000000 +0200
++++ qmmp-2.4.0/src/plugins/Visual/projectm/projectmwidget.cpp	2026-08-14 00:43:42.058712172 +0200
 @@ -28,6 +28,7 @@
  #include <QApplication>
  #include <QListWidget>
@@ -8,4 +7,4 @@ diff -up qmmp-2.1.1/src/plugins/Visual/projectm/projectmwidget.cpp.omv~ qmmp-2.1
 +#include <GL/gl.h>
  #include <qmmp/soundcore.h>
  #include <qmmp/qmmp.h>
- #include "projectmwrapper.h"
+ #include <qmmp/visual.h>
