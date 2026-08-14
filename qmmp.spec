@@ -20,7 +20,7 @@
 Summary:	Qt-based Multimedia Player
 Name:		qmmp
 Version:	2.4.0
-Release:	1%{?extrarelsuffix}
+Release:	2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		Sound
 Url:		https://qmmp.ylsoftware.com/
@@ -338,7 +338,7 @@ This contains basic plug-in distribution.
 %{_libdir}/%{name}-%{major2}/General/libhotkey.so
 %{_libdir}/%{name}-%{major2}/General/liblibrary.so
 %{_libdir}/%{name}-%{major2}/General/liblyrics.so
-%{_libdir}/%{name}-%{major2}/General/libbatchtageditor.so
+%{_libdir}/qmmp-2.4/General/libbatchtageditor.so
 %{_libdir}/%{name}-%{major2}/General/libmpris.so
 %{_libdir}/%{name}-%{major2}/General/libcovermanager.so
 %{_libdir}/%{name}-%{major2}/General/libkdenotify.so
